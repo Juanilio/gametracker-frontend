@@ -1,24 +1,24 @@
-import { Routes, Route, Link } from "react-router-dom"; // Importa componentes de rutas y enlaces de navegación
-import BibliotecaJuegos from "./components/BibliotecaJuegos"; // Página: listar juegos
-import FormularioJuego from "./components/FormularioJuego"; // Página: crear/editar juego
-import DetalleJuego from "./components/DetalleJuego"; // Página: detalle del juego
-import EstadisticasPersonales from "./components/EstadisticasPersonales"; // Página: estadísticas
+import { Routes, Route, Link } from "react-router-dom";
+import BibliotecaJuegos from "./components/BibliotecaJuegos";
+import FormularioJuego from "./components/FormularioJuego";
+import DetalleJuego from "./components/DetalleJuego";
+import EstadisticasPersonales from "./components/EstadisticasPersonales";
 
-export default function App() { // Componente principal de la app
+export default function App() {
   return (
-    <div> {/* Contenedor principal */}
-      <nav className="nav"> {/* Barra de navegación superior */}
-        <Link to="/">Biblioteca</Link> {/* Enlace a la página de lista de juegos */}
-        <Link to="/agregar">Agregar Juego</Link> {/* Enlace a crear juego */}
-        <Link to="/stats">Estadísticas</Link> {/* Enlace a ver estadísticas */}
+    <div>
+      <nav className="nav">
+        <Link to="/">Biblioteca</Link>
+        <Link to="/agregar">Agregar Juego</Link>
+        <Link to="/stats">Estadísticas</Link>
       </nav>
 
-      <Routes> {/* Define las rutas visibles en la app */}
-        <Route path="/" element={<BibliotecaJuegos />} /> {/* Ruta raíz: muestra biblioteca */}
-        <Route path="/agregar" element={<FormularioJuego />} /> {/* Ruta para agregar juego */}
-        <Route path="/editar/:id" element={<FormularioJuego />} /> {/* Ruta para editar juego (usa :id) */}
-        <Route path="/juego/:id" element={<DetalleJuego />} /> {/* Ruta detalle del juego (usa :id) */}
-        <Route path="/stats" element={<EstadisticasPersonales />} /> {/* Ruta para estadísticas */}
+      <Routes>
+        <Route path="/" element={<BibliotecaJuegos />} />
+        <Route path="/agregar" element={<FormularioJuego />} />
+        <Route path="/editar/:id" element={<FormularioJuego />} />
+        <Route path="/juego/:id" element={<DetalleJuego />} />
+        <Route path="/stats" element={<EstadisticasPersonales />} />
       </Routes>
     </div>
   );
