@@ -25,19 +25,16 @@ export default function DetalleJuego() {
   return (
     <div className="container">
       <h1>{game.title}</h1>
-      <img
-        src={game.coverUrl || "https://via.placeholder.com/200"}
-        alt={game.title}
-      />
 
       <p>Plataforma: {game.platform}</p>
-      <p>Horas: {game.hoursPlayed}</p>
-      <p>Rating: {game.rating ?? "—"}</p>
+      <p>Horas Jugadas: {game.hoursPlayed}</p>
+      <p>Puntuación: {game.rating ? `${game.rating}/5` : '—'}</p>
       <p>{game.completed ? "Completado" : "En progreso"}</p>
       <p>Géneros: {game.genres.join(", ")}</p>
 
-      <Link to={`/editar/${game._id}`}>Editar</Link>
-      <button onClick={eliminar}>Eliminar</button>
+      <Link to={`/editar/${game._id}`} className="btn ghost">Editar</Link>
+      <button onClick={eliminar} className="btn">Eliminar</button>
+
 
       <h2>Reseñas</h2>
       <ListaReseñas gameId={id} />

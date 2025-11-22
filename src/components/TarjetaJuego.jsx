@@ -7,10 +7,9 @@ export default function TarjetaJuego({ game }) {
     <div className="card" onClick={() => navigate(`/juego/${game._id}`)}>
       <h3>{game.title}</h3>
       <p>Plataforma: {game.platform}</p>
-      <p>Horas: {game.hoursPlayed}</p>
-      <p>Puntuación: {game.rating ?? '—'}</p>
+      <p>Horas Jugadas: {game.hoursPlayed}</p>
+      <p>Puntuación: {game.rating ? `${game.rating}/5` : '—'}</p>
       <p>{game.completed ? 'Completado' : 'En progreso'}</p>
-      {/* botones: ver, editar, eliminar (llamar a API correspondiente) */}
     </div>
   );
 }

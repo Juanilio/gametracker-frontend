@@ -10,7 +10,6 @@ export default function FormularioJuego() {
   const [form, setForm] = useState({
     title: "",
     platform: "",
-    coverUrl: "",
     hoursPlayed: 0,
     completed: false,
     rating: "",
@@ -61,7 +60,6 @@ export default function FormularioJuego() {
       <form className="form" onSubmit={handleSubmit}>
         <input name="title" placeholder="Título" value={form.title} onChange={handleChange} required />
         <input name="platform" placeholder="Plataforma" value={form.platform} onChange={handleChange} />
-        <input name="coverUrl" placeholder="URL de portada" value={form.coverUrl} onChange={handleChange} />
         <input name="hoursPlayed" type="number" placeholder="Horas jugadas" value={form.hoursPlayed} onChange={handleChange} />
         <input name="rating" type="number" min="0" max="5" placeholder="Rating (0-5)" value={form.rating} onChange={handleChange} />
 
